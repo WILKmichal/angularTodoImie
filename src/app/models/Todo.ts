@@ -1,5 +1,7 @@
 export class Todo {
   id:number;
-  title:string;
+  nom:string;
+  prenom:string;
+  email:string;
   completed:boolean;
 }

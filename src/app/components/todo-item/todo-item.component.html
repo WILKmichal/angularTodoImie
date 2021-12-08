@@ -5,9 +5,16 @@
       type="checkbox"
       id="{{ todo.id }}"
       [checked]="todo.completed"
+      class="invisible"
     />
     <label for="{{ todo.id }}">
-      {{ todo.title }}
+      {{ todo.nom }}
+    </label>
+    <label for="{{ todo.id }}">
+      {{ todo.prenom }}
+    </label>
+    <label for="{{ todo.id }}">
+      {{ todo.email }}
     </label>
     <button (click)="onDelete(todo)" class="del">X</button>
   </p>

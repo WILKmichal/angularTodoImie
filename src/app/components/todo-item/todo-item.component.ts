@@ -8,11 +8,13 @@ import { Todo } from 'src/app/models/Todo';
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css']
 })
+
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
   @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
 
   constructor(private todoService:TodoService) { }
+  
 
   ngOnInit() {
   }
@@ -31,7 +33,7 @@ export class TodoItemComponent implements OnInit {
     // Toggle in UI
     todo.completed = !todo.completed;
     // Toggle on server
-    this.todoService.toggleCompleted(todo).subscribe(todo => console.log(todo));
+    this.todoService.toggleCompleted(todo);
   }
 
   onDelete(todo) {

@@ -12,8 +12,13 @@
   background: #f4f4f4;
   padding: 10px;
   border-bottom: 1px #ccc dotted;
+  width: 70;
 }
 
 .is-complete {
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
+}
+
+.invisible{
+  opacity:0
 }
