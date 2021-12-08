@@ -8,7 +8,7 @@ import { Todo } from '../models/Todo';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
-  todos: Todo[];
+  todos: Todo[] = [];
   data: String[] = [];
 
   constructor(private todoService: TodoService) { }
@@ -21,7 +21,14 @@ export class InfoComponent implements OnInit {
       //     this.todos.push(element);
       //   }
       // });
-      console.log(JSON.parse(e|| "[]"));
+      // this.todos = JSON.parse(e|| "[]");
+      (JSON.parse(e || "[]")).forEach((element, index) => {
+        if (element.completed == true) {
+          console.log(element);
+          this.data = [JSON.stringify(element)];
+        }
+      });
+
     });
     // this.todos = this.todoService.getTodos();
     // this.todos.forEach(element => {
